@@ -20,14 +20,27 @@ Your response:
 <your natural reply>
 """
 
-def answer_for_question(question:str,answer:str):
-    query = f"Question: {question}\nAnswer: {answer}\nYour response:"
-    response = ollama.chat(
-        model="mistral:7b-instruct",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT_QA},
-            {"role": "user", "content": query}
-        ]
-    )
-    return response["message"]["content"]
+def answer_for_question(question:str,answer:str)-> str:
+    """
+    Generates a natural-language response to a question based solely on a reference answer.
+
+    Args:
+        question (str): The user's question.
+        answer (str): The reference answer the model must rely on.
+
+    Returns:
+        str: A conversational reply generated strictly using the provided answer.
+    """
+    try:
+        query = f"Question: {question}\nAnswer: {answer}\nYour response:"
+        response = ollama.chat(
+            model="mistral:7b-instruct",
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT_QA},
+                {"role": "user", "content": query}
+            ]
+        )
+        return response["message"]["content"]
+    except Exception as e:
+            return f"Error while generating response: {e}"
 

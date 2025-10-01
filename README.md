@@ -12,6 +12,9 @@ A proof-of-concept (POC) project for monitoring **Disk**, **Battery**, and **Mem
 
 ---
 
+## High Level Architecture
+![Project Logo](architecture_high_level.jpg)
+
 ## 🛠️ Setup and Installation
 
 Follow these steps to get the monitor up and running on your macOS machine.
@@ -46,7 +49,7 @@ Follow these steps to get the monitor up and running on your macOS machine.
 4.  **Install Python Dependencies**
     Install the necessary Python packages using pip.
     ```bash
-    pip install ollama psutil
+    pip3 install ollama psutil
     ```
 
 ---
@@ -57,4 +60,5 @@ Once the setup is complete, you can start the monitoring script.
 
 Execute the `running_script.py` file from your terminal:
 ```bash
-python running_script.py
+python3 running_script.py
+```
