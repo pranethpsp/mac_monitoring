@@ -1,0 +1,4 @@
+psutil
+ollama
+pytest
+pytest-mock
