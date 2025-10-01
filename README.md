@@ -40,7 +40,7 @@ Follow these steps to get the monitor up and running on your macOS machine.
     ```
 
 3.  **Download AI Models**
-    Pull the required AI models. This project is configured to use `llama3` and `mistral`.
+    Pull the required AI models. This project is configured to use `llama3` and `mistral`. It takes around 4 GB each.
     ```bash
     ollama pull llama3:8b
     ollama pull mistral:7b-instruct
